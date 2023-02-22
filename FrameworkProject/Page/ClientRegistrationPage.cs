@@ -42,5 +42,12 @@ namespace FrameworkProject.Page
             Common.WaitForElementToBeVisible(locator);
             return Common.GetElementText(locator);
         }
+
+        public static string GetErrorMessage()
+        {
+            string locator = "//*[@data-test-id='password-error']";
+            //Common.WaitForElementToBeVisible(locator);
+            return Common.GetElementText(locator);
+        }        
     }
 }

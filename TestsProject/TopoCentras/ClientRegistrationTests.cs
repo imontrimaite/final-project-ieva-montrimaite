@@ -30,6 +30,20 @@ namespace TestsProject.TopoCentras
             Assert.AreEqual(expectedMessage, actualMessage);
         }
 
+        [Test]
+        public void RegistrationWithIncorrectPassword()
+        {
+            string expectedMessage = "Slaptažodį turi sudaryti ne mažiau kaip 6 simboliai.";
+
+            ClientRegistrationPage.InputEmail("testemail2@email.com");
+            ClientRegistrationPage.InputPassword("Test");
+            ClientRegistrationPage.ClickRegisterButton();
+
+            string actualMessage = ClientRegistrationPage.GetErrorMessage();
+
+            Assert.IsTrue(actualMessage.Contains(expectedMessage), $"Actual message: {actualMessage}, expected message {expectedMessage}");
+        }
+
         [TearDown]
         public void TearDown()
         {
