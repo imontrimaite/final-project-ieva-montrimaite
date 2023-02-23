@@ -14,46 +14,38 @@ namespace FrameworkProject.Page
 
         public static void InputEmail(string email)
         {
-            string locator = "//*[@id='email']";
-            Common.SendKeys(locator, email);
+            Common.SendKeys(Locators.SuccessfulRegistration.inputEmail, email);
         }
 
         public static void InputPassword(string password)
         {
-            string locator = "//*[@id='password']";
-            Common.SendKeys(locator, password);
+            Common.SendKeys(Locators.SuccessfulRegistration.inputPassword, password);
         }
 
         public static void ClickBothCheckboxes()
         {
-            string locator = "//*[@class='Checkbox-checkBox-1fD 767']";
-            Common.ClickElements(locator);
+            Common.ClickElements(Locators.SuccessfulRegistration.checkboxes);
         }
 
         public static void ClickRegisterButton()
         {
-            string locator = "//*[@data-test-id='register-btn']";
-            Common.ClickElement(locator);
+            Common.ClickElement(Locators.SuccessfulRegistration.buttonRegister);
         }
 
         public static string GetRegistrationConfirmationMessage()
         {
-            string locator = "//*[@class='SuccessDisplay-body-5bU']";
-            Common.WaitForElementToBeVisible(locator);
-            return Common.GetElementText(locator);
+            Common.WaitForElementToBeVisible(Locators.SuccessfulRegistration.messageConfirmation);
+            return Common.GetElementText(Locators.SuccessfulRegistration.messageConfirmation);
         }
 
         public static string GetErrorMessage()
         {
-            string locator = "//*[@data-test-id='password-error']";
-            //Common.WaitForElementToBeVisible(locator);
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.SuccessfulRegistration.messagePwrdError);
         }
 
         public static void RemoveIncorrectPassword()
         {
-            string locator = "//*[@id='password']";
-            Common.RemoveText(locator);
+            Common.RemoveText(Locators.SuccessfulRegistration.inputPassword);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Nurodytu el.paštu išsiuntėmė laišką registracijos patvirtinimui.";
 
-            ClientRegistrationPage.InputEmail("testemail2@email.com");
+            ClientRegistrationPage.InputEmail("testemail4@email.com");
             ClientRegistrationPage.InputPassword("Test12?Pwrd!");
             ClientRegistrationPage.ClickBothCheckboxes();
             ClientRegistrationPage.ClickRegisterButton();
