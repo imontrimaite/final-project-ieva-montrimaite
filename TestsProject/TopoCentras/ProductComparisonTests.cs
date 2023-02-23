@@ -3,18 +3,18 @@
 using FrameworkProject;
 using FrameworkProject.Page;
 using NUnit.Framework;
+using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
 {
-    internal class ProductComparisonTests
+    internal class ProductComparisonTests : BaseTest
     {
         [SetUp]
-
-        public void Setup()
+        public void Open()
         {
-            Driver.SetupDriver();
             ProductComparisonPage.Open();
         }
+
         [Test]
         public void ProductComparison()
         {

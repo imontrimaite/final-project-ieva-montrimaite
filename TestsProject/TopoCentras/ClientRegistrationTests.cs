@@ -2,16 +2,15 @@
 using FrameworkProject;
 using FrameworkProject.Page;
 using NUnit.Framework;
+using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
 {
-    internal class ClientRegistrationTests
+    internal class ClientRegistrationTests : BaseTest
     {
         [SetUp]
-
-        public void Setup()
+        public void Open()
         {
-            Driver.SetupDriver();
             ClientRegistrationPage.Open();
         }
 
@@ -42,12 +41,6 @@ namespace TestsProject.TopoCentras
             string actualMessage = ClientRegistrationPage.GetErrorMessage();
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage), $"Actual message: {actualMessage}, expected message {expectedMessage}");
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.QuitDriver();
         }
     }
 }
