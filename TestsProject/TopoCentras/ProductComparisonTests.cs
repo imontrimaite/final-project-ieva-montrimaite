@@ -35,12 +35,5 @@ namespace TestsProject.TopoCentras
             string manufucturerCodeSecond = ProductComparisonPage.GetSecondManufacturerCode();
             Assert.AreNotEqual(manufucturerCodeFirst, manufucturerCodeSecond);            
         }
-
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.QuitDriver();
-        }
     }
 }
