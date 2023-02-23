@@ -48,6 +48,12 @@ namespace FrameworkProject.Page
             string locator = "//*[@data-test-id='password-error']";
             //Common.WaitForElementToBeVisible(locator);
             return Common.GetElementText(locator);
-        }        
+        }
+
+        public static void RemoveIncorrectPassword()
+        {
+            string locator = "//*[@id='password']";
+            Common.RemoveText(locator);
+        }
     }
 }

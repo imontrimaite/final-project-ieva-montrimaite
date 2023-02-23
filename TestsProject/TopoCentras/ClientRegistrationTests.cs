@@ -32,7 +32,7 @@ namespace TestsProject.TopoCentras
         [Test]
         public void RegistrationWithIncorrectPassword()
         {
-            string expectedMessage = "Slaptažodį turi sudaryti ne mažiau kaip 6 simboliai.";
+            string expectedMessage = "Slaptažodį turi sudaryti";
 
             ClientRegistrationPage.InputEmail("testemail2@email.com");
             ClientRegistrationPage.InputPassword("Test");
@@ -40,7 +40,35 @@ namespace TestsProject.TopoCentras
 
             string actualMessage = ClientRegistrationPage.GetErrorMessage();
 
-            Assert.IsTrue(actualMessage.Contains(expectedMessage), $"Actual message: {actualMessage}, expected message {expectedMessage}");
+            Assert.IsTrue(actualMessage.Contains(expectedMessage));
+
+            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.InputPassword("testpassword?1");
+
+            actualMessage = ClientRegistrationPage.GetErrorMessage();
+
+            Assert.IsTrue(actualMessage.Contains(expectedMessage));
+
+            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.InputPassword("Testpassword?");
+
+            actualMessage = ClientRegistrationPage.GetErrorMessage();
+
+            Assert.IsTrue(actualMessage.Contains(expectedMessage));
+
+            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.InputPassword("Testpassword1");
+
+            actualMessage = ClientRegistrationPage.GetErrorMessage();
+
+            Assert.IsTrue(actualMessage.Contains(expectedMessage));
+
+            // pabaigti
+            /*ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.InputPassword("Testpassword1?");
+
+            Assert.IsFalse(ClientRegistrationPage.GetErrorMessage());*/
+
         }
     }
 }
