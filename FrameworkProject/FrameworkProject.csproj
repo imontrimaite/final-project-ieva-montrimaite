@@ -56,6 +56,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Page\ClientRegistrationPage.cs" />
+    <Compile Include="Page\ProductComparisonPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
