@@ -11,68 +11,58 @@ namespace FrameworkProject.Page
             Common.ChangeWindowPosition();
             Common.MaximizeWindow();
             Driver.OpenURL("https://www.topocentras.lt/mac/macbook-pro-m2.html");
-            Common.ClickElement("//*[@class='CookieConsent-actions-F41']");
+            Common.ClickElement(Locators.ProductComparison.cookieConsent);
         }
 
         public static void SelectFirstComaprisonCheckbox()
         {
-            string locator = "(//*[@class='Compare-compareContainer-uDf'])[1]";
-            Common.ClickElement(locator);
+            Common.ClickElement(Locators.ProductComparison.firstCheckbox);
         }
 
         public static void SelectSecondComaprisonCheckbox()
         {
-            string locator = "(//*[@class='Compare-compareContainer-uDf'])[2]";
-            Common.ClickElement(locator);
+            Common.ClickElement(Locators.ProductComparison.secondCheckbox);
         }
 
         public static void ClickCompareButton()
         {
-            string locator = "//*[@class='CompareModal-button-2EU']";
-            Common.ClickElement(locator);            
+            Common.ClickElement(Locators.ProductComparison.buttonCompare);            
         }
 
         public static void ToggleShowOnlyDifferences()
         {
-            string locator = "(//*[@class='Toggle-switch-2Yk'])[2]";
-            Common.WaitForElementToBeVisible(locator);
-            Common.ClickElement(locator);
+            Common.WaitForElementToBeVisible(Locators.ProductComparison.toggle);
+            Common.ClickElement(Locators.ProductComparison.toggle);
         }
 
         public static string GetFirstColor()
         {
-            string locator = "//*[@id='C-1-R-1']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.firstColor);
         }
 
         public static string GetSecondColor()
         {
-            string locator = "//*[@id='C-2-R-1']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.secondColor);
         }
 
         public static string GetFirstItemCode()
         {
-            string locator = "//*[@id='C-1-R-8']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.firstItemCode);
         }
 
         public static string GetSecondItemCode()
         {
-            string locator = "//*[@id='C-2-R-8']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.secondItemCode);
         }
 
         public static string GetFirstManufacturerCode()
         {
-            string locator = "//*[@id='C-1-R-11']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.firstManucafturerCode);
         }
 
         public static string GetSecondManufacturerCode()
         {
-            string locator = "//*[@id='C-2-R-11']";
-            return Common.GetElementText(locator);
+            return Common.GetElementText(Locators.ProductComparison.secondManufacturerCode);
         }
     }
 }

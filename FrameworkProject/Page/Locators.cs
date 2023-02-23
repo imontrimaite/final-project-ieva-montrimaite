@@ -12,5 +12,20 @@ namespace FrameworkProject.Page
             internal static string messageConfirmation = "//*[@class='SuccessDisplay-body-5bU']";
             internal static string messagePwrdError = "//*[@data-test-id='password-error']";
         }
+
+        internal class ProductComparison
+        {
+            internal static string cookieConsent = "//*[@class='CookieConsent-actions-F41']";
+            internal static string firstCheckbox = "(//*[@class='Compare-compareContainer-uDf'])[1]";
+            internal static string secondCheckbox = "(//*[@class='Compare-compareContainer-uDf'])[2]";
+            internal static string buttonCompare = "//*[@class='CompareModal-button-2EU']";
+            internal static string toggle = "(//*[@class='Toggle-switch-2Yk'])[2]";
+            internal static string firstColor = "//*[@id='C-1-R-1']";
+            internal static string secondColor = "//*[@id='C-2-R-1']";
+            internal static string firstItemCode = "//*[@id='C-1-R-8']";
+            internal static string secondItemCode = "//*[@id='C-2-R-8']";
+            internal static string firstManucafturerCode = "//*[@id='C-1-R-11']";
+            internal static string secondManufacturerCode = "//*[@id='C-2-R-11']";
+        }
     }
 }
