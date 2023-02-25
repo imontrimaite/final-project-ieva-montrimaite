@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -68,6 +69,38 @@ namespace FrameworkProject
             IWebElement toClear = Driver.GetDriver().FindElement(By.XPath(locator));
             toClear.SendKeys(Keys.Control + "a");
             toClear.SendKeys(Keys.Delete);
+        }
+
+        internal static void MoveMouseToElement(string locator)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            IWebElement element = GetElement(locator);
+
+            actions.MoveToElement(element);
+            actions.Perform();
+        }
+
+        internal static List<string> GetElementsText(string locator)
+        {
+            List<IWebElement> elements = GetElements(locator);
+            List<string> result = new List<string>();
+
+            foreach (IWebElement element in elements)
+            {
+                result.Add(element.Text);
+            }
+            return result;
+        }
+
+        internal static string GetAttributeValue(string locator, string attributeName)
+        {
+            return GetElement(locator).GetAttribute(attributeName);
+        }
+
+        internal static void WaitForElementAttributeToChangeValue(string locator, string attributeName, string attributeNewValue)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(attributeNewValue));
         }
     }
 }
