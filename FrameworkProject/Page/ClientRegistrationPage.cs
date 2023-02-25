@@ -47,5 +47,10 @@ namespace FrameworkProject.Page
         {
             Common.RemoveText(Locators.SuccessfulRegistration.inputPassword);
         }
+
+        public static bool IsErrorMessagePresent()
+        {
+            return Common.WaitForElementToNotBeVisible(Locators.SuccessfulRegistration.messagePwrdError);
+        }
     }
 }

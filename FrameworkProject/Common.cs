@@ -59,6 +59,13 @@ namespace FrameworkProject
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
+        internal static bool WaitForElementToNotBeVisible(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath(locator)));
+            return true;
+        }
+
         internal static string GetElementText(string locator)
         {
             return GetElement(locator).Text;

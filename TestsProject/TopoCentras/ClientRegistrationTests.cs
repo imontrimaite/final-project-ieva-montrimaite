@@ -63,12 +63,12 @@ namespace TestsProject.TopoCentras
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage));
 
-            // pabaigti
-            /*ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.RemoveIncorrectPassword();
             ClientRegistrationPage.InputPassword("Testpassword1?");
 
-            Assert.IsFalse(ClientRegistrationPage.GetErrorMessage());*/
+            bool elementNotPresent = ClientRegistrationPage.IsErrorMessagePresent();
 
+            Assert.IsTrue(elementNotPresent);
         }
     }
 }
