@@ -46,11 +46,9 @@ namespace FrameworkProject.Page
         internal class ProdcutFilter
         {
             internal static string checkboxInStores = "//*[text()='Turime parduotuvėse']";
-            internal static string checkboxFoldingPhones = "//*[text()='Sulenkiami telefonai']";
-            internal static string checkbox128gbInternalMemory = "(//*[text()='128 GB'])[1]";
+            internal static string checkboxPhilips = "//*[text()='PHILIPS']";
             internal static string outputProductAvailability = "//*[@data-test-id='add-to-cart-btn']";
-            internal static string outputProductType = "//*[@class='ProductGridItem-productName-3ZD']";
-            internal static string outputInternalMemory = "//*[@class='ProductGridItem-featuredAttributesWrapper-1yz']";
+            internal static string outputProducer = "//*[@class='ProductGridItem-productName-3ZD']";
         }
     }
 }

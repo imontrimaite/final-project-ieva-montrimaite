@@ -1,7 +1,10 @@
 ﻿
 using FrameworkProject.Page;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
@@ -18,21 +21,16 @@ namespace TestsProject.TopoCentras
         public void ProductFilter()
         {
             string expectedAvailablity = "Į krepšelį";
-            string expectedPhoneType = "Galaxy Flip4";
-            string expectedInternalMemory = "128 GB";
+            string expectedProducer = "PHILIPS";
 
-            ProductFilterPage.ClickInStoresCheckbox();
-            ProductFilterPage.ClickFoldingPhonesCheckbox();
-            ProductFilterPage.Click128gbCheckBox();
+            ProductFilterPage.ClickAvailableInStoresCheckbox();
+            ProductFilterPage.ClickPhilipsProducerCheckbox();
 
             List<string> actualAvailability = ProductFilterPage.GetProductsAvailabilityText();
-            Assert.IsTrue(actualAvailability.TrueForAll(x => x.Contains(expectedAvailablity)));
+            Assert.IsTrue(actualAvailability.TrueForAll(x => x.Equals(expectedAvailablity)));
 
-            List<string> actualPhoneType = ProductFilterPage.GetProductsTypeText();
-            Assert.IsTrue(actualPhoneType.TrueForAll(x => x.Contains(expectedPhoneType)));
-
-            List<string> actualInternalMemory = ProductFilterPage.GetProductsInternalMemoryText();
-            Assert.IsTrue(actualInternalMemory.TrueForAll(x => x.Contains(expectedInternalMemory)));
+            List<string> actualProducer = ProductFilterPage.GetProducerText();
+            Assert.IsTrue(actualProducer.TrueForAll(x => x.Contains(expectedProducer)));
         }
     }
 }

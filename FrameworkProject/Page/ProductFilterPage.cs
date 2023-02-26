@@ -8,23 +8,18 @@ namespace FrameworkProject.Page
     {
         public static void Open()
         {
-            Driver.OpenURL("https://www.topocentras.lt/telefonai-navigacijos-auto-iranga/ismanieji-telefonai.html");
+            Driver.OpenURL("https://www.topocentras.lt/televizoriai-ir-garso-technika/televizoriai.html");
             Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
 
-        public static void ClickInStoresCheckbox()
+        public static void ClickAvailableInStoresCheckbox()
         {
             Common.ClickElement(Locators.ProdcutFilter.checkboxInStores);
         }
 
-        public static void ClickFoldingPhonesCheckbox()
+        public static void ClickPhilipsProducerCheckbox()
         {
-            Common.ClickElement(Locators.ProdcutFilter.checkboxFoldingPhones);
-        }
-
-        public static void Click128gbCheckBox()
-        {
-            Common.ClickElement(Locators.ProdcutFilter.checkbox128gbInternalMemory);
+            Common.ClickElement(Locators.ProdcutFilter.checkboxPhilips);
         }
 
         public static List<string> GetProductsAvailabilityText()
@@ -32,14 +27,9 @@ namespace FrameworkProject.Page
             return Common.GetElementsText(Locators.ProdcutFilter.outputProductAvailability);
         }
 
-        public static List<string> GetProductsTypeText()
+        public static List<string> GetProducerText()
         {
-            return Common.GetElementsText(Locators.ProdcutFilter.outputProductType);
-        }
-
-        public static List<string> GetProductsInternalMemoryText()
-        {
-            return Common.GetElementsText(Locators.ProdcutFilter.outputInternalMemory);
+            return Common.GetElementsText(Locators.ProdcutFilter.outputProducer);
         }
     }
 }
