@@ -17,11 +17,6 @@ namespace FrameworkProject
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
 
-        internal static void SendKeys(string locator, string textValue)
-        {
-            GetElement(locator).SendKeys(textValue);
-        }
-
         private static List<IWebElement> GetElements(string locator)
         {
             return Driver.GetDriver().FindElements(By.XPath(locator)).ToList();
@@ -42,10 +37,9 @@ namespace FrameworkProject
             GetElement(locator).Click();
         }
 
-        internal static void WaitForElementToBeVisible(string locator)
+        internal static void SendKeys(string locator, string textValue)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            GetElement(locator).SendKeys(textValue);
         }
 
         internal static string GetElementText(string locator)
@@ -84,6 +78,12 @@ namespace FrameworkProject
         internal static string GetAttributeValue(string locator, string attributeName)
         {
             return GetElement(locator).GetAttribute(attributeName);
+        }
+
+        internal static void WaitForElementToBeVisible(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
         }
 
         internal static void WaitForElementAttributeToChangeValue(string locator, string attributeName, string attributeNewValue)

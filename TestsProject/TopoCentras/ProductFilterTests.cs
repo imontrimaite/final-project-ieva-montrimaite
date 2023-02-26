@@ -1,10 +1,7 @@
 ﻿
 using FrameworkProject.Page;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
