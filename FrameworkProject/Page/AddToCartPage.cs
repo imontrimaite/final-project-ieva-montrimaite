@@ -14,14 +14,14 @@ namespace FrameworkProject.Page
             Common.ClickElement(Locators.AddToCart.cookieConsent);
         }
 
-        public static void ClickAddToCartButtonInTheCategoryPage()
+        public static void ClickAddToCartButton()
         {
-            Common.ClickElement(Locators.AddToCart.buttonAddToCartCategoryPage);
+            Common.ClickElement(Locators.AddToCart.buttonAddToCart);
         }
-        public static void ClickContinueShoppingButtonInTheCategoryPage()
+        public static void ClickContinueShoppingButton()
         {
-            Common.WaitForElementToBeVisible(Locators.AddToCart.buttonContinueShoppingCategoryPage);
-            Common.ClickElement(Locators.AddToCart.buttonContinueShoppingCategoryPage);
+            Common.WaitForElementToBeVisible(Locators.AddToCart.buttonContinueShopping);
+            Common.ClickElement(Locators.AddToCart.buttonContinueShopping);
         }
 
         public static void SelectProduct()
@@ -31,15 +31,8 @@ namespace FrameworkProject.Page
 
         public static void ClickAddToCartButtonInTheProductPage()
         {
-            Common.WaitForElementToBeVisible(Locators.AddToCart.buttonAddToCartProductPage);
-            Common.ClickElement(Locators.AddToCart.buttonAddToCartProductPage);
-        }
-
-
-        public static void ClickContinueShoppingButtonInTheProductPage()
-        {
-            Common.WaitForElementToBeVisible(Locators.AddToCart.buttonContinueShoppingProductPage);
-            Common.ClickElement(Locators.AddToCart.buttonContinueShoppingProductPage);
+            Common.WaitForElementToBeVisible(Locators.AddToCart.buttonAddToCart);
+            Common.ClickElement(Locators.AddToCart.buttonAddToCart);
         }
 
         public static void HoverOnCartButton()

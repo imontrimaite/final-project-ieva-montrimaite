@@ -30,11 +30,11 @@ namespace FrameworkProject.Page
 
         internal class AddToCart
         {
-            internal static string buttonAddToCartCategoryPage = "(//*[@data-test-id='add-to-cart-btn'])[1]";
-            internal static string buttonContinueShoppingCategoryPage = "//*[@data-test-id='add-to-cart-modal-continue-btn']";
+            internal static string buttonAddToCart = "(//*[@data-test-id='add-to-cart-btn'])[1]";
+            internal static string buttonContinueShopping = "//*[@data-test-id='add-to-cart-modal-continue-btn']";
             internal static string buttonSelectProduct = "(//*[@class='ProductGridItem-link-3xD'])[4]";
-            internal static string buttonAddToCartProductPage = "(//*[@data-test-id='add-to-cart-btn'])[1]";
-            internal static string buttonContinueShoppingProductPage = "//*[@data-test-id='add-to-cart-modal-continue-btn']";
+            //internal static string buttonAddToCartProductPage = "(//*[@data-test-id='add-to-cart-btn'])[1]";
+            //internal static string buttonContinueShoppingProductPage = "//*[@data-test-id='add-to-cart-modal-continue-btn']";
             internal static string hoverAddToCart = "(//*[@data-test-id='minicart'])[1]";
             internal static string buttonBuy = "(//*[@data-test-id='checkout-link'])[1]";
             internal static string buttonIncreaseQuantity = "(//*[@data-test-id='quantity-increase-btn'])[1]";

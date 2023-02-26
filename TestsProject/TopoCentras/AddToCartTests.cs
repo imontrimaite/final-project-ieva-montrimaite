@@ -21,11 +21,11 @@ namespace TestsProject.TopoCentras
             string expectedProductName = "Mobilusis telefonas";
             string expectedQuantity = "2";
 
-            AddToCartPage.ClickAddToCartButtonInTheCategoryPage();
-            AddToCartPage.ClickContinueShoppingButtonInTheCategoryPage();
+            AddToCartPage.ClickAddToCartButton();
+            AddToCartPage.ClickContinueShoppingButton();
             AddToCartPage.SelectProduct();
             AddToCartPage.ClickAddToCartButtonInTheProductPage();
-            AddToCartPage.ClickContinueShoppingButtonInTheProductPage();
+            AddToCartPage.ClickContinueShoppingButton();
             AddToCartPage.HoverOnCartButton();
             AddToCartPage.ClickBuyButton();
             AddToCartPage.ClickQuantityButton();
