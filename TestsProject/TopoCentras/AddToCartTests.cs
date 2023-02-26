@@ -30,8 +30,8 @@ namespace TestsProject.TopoCentras
             AddToCartPage.ClickBuyButton();
             AddToCartPage.ClickQuantityButton();
 
-            List<string> actualProducts = AddToCartPage.GetProductsText();
-            Assert.IsTrue(actualProducts.TrueForAll(x => x.Contains(expectedProductName)));
+            List<string> actualFullProductNames = AddToCartPage.GetFullProductNames();
+            Assert.IsTrue(actualFullProductNames.TrueForAll(x => x.Contains(expectedProductName)));
 
             string actualQuantity = AddToCartPage.GetProductQuantity();
             Assert.AreEqual(expectedQuantity, actualQuantity);

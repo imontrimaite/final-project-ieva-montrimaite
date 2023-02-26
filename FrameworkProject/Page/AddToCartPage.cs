@@ -48,7 +48,7 @@ namespace FrameworkProject.Page
             Common.ClickElement(Locators.AddToCart.buttonIncreaseQuantity);
         }
 
-        public static List<string> GetProductsText()
+        public static List<string> GetFullProductNames()
         {
             return Common.GetElementsText(Locators.AddToCart.nameProduct);
         }
