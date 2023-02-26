@@ -53,7 +53,7 @@
     <Compile Include="TopoCentras\AddToCartTests.cs" />
     <Compile Include="TopoCentras\ClientRegistrationTests.cs" />
     <Compile Include="TopoCentras\ProductComparisonTests.cs" />
-    <Compile Include="TopoCentras\ProductFilterTest.cs" />
+    <Compile Include="TopoCentras\ProductFilterTests.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
