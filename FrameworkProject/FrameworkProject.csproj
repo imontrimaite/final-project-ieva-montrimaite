@@ -59,6 +59,7 @@
     <Compile Include="Page\ClientRegistrationPage.cs" />
     <Compile Include="Page\Locators.cs" />
     <Compile Include="Page\ProductComparisonPage.cs" />
+    <Compile Include="Page\ProductFilterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

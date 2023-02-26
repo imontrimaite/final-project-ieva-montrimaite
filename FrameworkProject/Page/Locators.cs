@@ -42,5 +42,16 @@ namespace FrameworkProject.Page
             internal static string nameProduct = "//*[@class='Products-productName-2uF']";
             internal static string productQuantity = "(//*[@data-test-id='quantity-input'])[1]";
         }
+
+        internal class ProdcutFilter
+        {
+            internal static string checkboxInStores = "//*[text()='Turime parduotuvėse']";
+            internal static string checkboxFoldingPhones = "//*[text()='Sulenkiami telefonai']";
+            internal static string checkbox128gbInternalMemory = "(//*[text()='128 GB'])[1]";
+            internal static string outputProductAvailability = "//*[@data-test-id='add-to-cart-btn']";
+            internal static string outputProductType = "//*[@class='ProductGridItem-productName-3ZD']";
+            internal static string outputInternalMemory = "//*[@class='ProductGridItem-featuredAttributesWrapper-1yz']";
+            internal static string cookieConsent = "//*[@class='CookieConsent-actions-F41']";
+        }
     }
 }
