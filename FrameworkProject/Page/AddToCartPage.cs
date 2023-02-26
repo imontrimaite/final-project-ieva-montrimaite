@@ -11,7 +11,7 @@ namespace FrameworkProject.Page
             Common.ChangeWindowPosition();
             Common.MaximizeWindow();
             Driver.OpenURL("https://www.topocentras.lt/telefonai-navigacijos-auto-iranga/ismanieji-telefonai.html");
-            Common.ClickElement(Locators.AddToCart.cookieConsent);
+            Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
 
         public static void ClickAddToCartButton()
