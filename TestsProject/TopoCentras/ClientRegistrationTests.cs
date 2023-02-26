@@ -20,7 +20,7 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Nurodytu el.paštu išsiuntėmė laišką registracijos patvirtinimui.";
 
-            ClientRegistrationPage.InputEmail("testemail3@email.com");
+            ClientRegistrationPage.InputEmail("testemail5@email.com");
             ClientRegistrationPage.InputPassword("Test12?Pwrd!");
             ClientRegistrationPage.ClickBothCheckboxes();
             ClientRegistrationPage.ClickRegisterButton();
@@ -36,20 +36,18 @@ namespace TestsProject.TopoCentras
             string expectedMessage = "Slaptažodį turi sudaryti";
 
             ClientRegistrationPage.InputEmail("testemail2@email.com");
-            ClientRegistrationPage.InputPassword("Test");
-            ClientRegistrationPage.ClickRegisterButton();
 
-            string actualMessage = ClientRegistrationPage.GetErrorMessage();
+            List<string> passwords = new List<string>() {"Test", "testpassword?1", "Testpassword?", "Testpassword1", "TESTPWRD?1"};
 
-            Assert.IsTrue(actualMessage.Contains(expectedMessage));
-
-            List<string> passwords = new List<string>() { "testpassword?1", "Testpassword?", "Testpassword1", "TESTPWRD?1" };
-
-            foreach (var password in passwords)
+            foreach (string password in passwords)
             {
+                ClientRegistrationPage.InputPassword(password);
                 ClientRegistrationPage.RemovePreviousPassword();
                 ClientRegistrationPage.InputPassword(password);
-                actualMessage = ClientRegistrationPage.GetErrorMessage();
+                ClientRegistrationPage.ClickRegisterButton();
+
+                string actualMessage = ClientRegistrationPage.GetErrorMessage();
+
                 Assert.IsTrue(actualMessage.Contains(expectedMessage));
             }
         }
@@ -59,6 +57,7 @@ namespace TestsProject.TopoCentras
         {
             ClientRegistrationPage.InputEmail("testemail3@email.com");
             ClientRegistrationPage.InputPassword("Testpassword1?");
+            ClientRegistrationPage.ClickRegisterButton();
 
             bool elementNotPresent = ClientRegistrationPage.IsErrorMessagePresent();
 
