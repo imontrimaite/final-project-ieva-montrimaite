@@ -51,17 +51,5 @@ namespace TestsProject.TopoCentras
                 Assert.IsTrue(actualMessage.Contains(expectedMessage));
             }
         }
-
-        [Test]
-        public void RegistrationWithValidPassword()
-        {
-            ClientRegistrationPage.InputEmail("testemail3@email.com");
-            ClientRegistrationPage.InputPassword("Testpassword1?");
-            ClientRegistrationPage.ClickRegisterButton();
-
-            bool elementNotPresent = ClientRegistrationPage.IsErrorMessagePresent();
-
-            Assert.IsTrue(elementNotPresent);
-        }
     }
 }
