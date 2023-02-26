@@ -30,7 +30,7 @@ namespace TestsProject.TopoCentras
         }
 
         [Test]
-        public void RegistrationWithIncorrectPassword()
+        public void RegistrationWithInvalidPassword()
         {
             string expectedMessage = "Slaptažodį turi sudaryti";
 
@@ -42,28 +42,28 @@ namespace TestsProject.TopoCentras
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage));
 
-            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.RemovePreviousPassword();
             ClientRegistrationPage.InputPassword("testpassword?1");
 
             actualMessage = ClientRegistrationPage.GetErrorMessage();
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage));
 
-            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.RemovePreviousPassword();
             ClientRegistrationPage.InputPassword("Testpassword?");
 
             actualMessage = ClientRegistrationPage.GetErrorMessage();
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage));
 
-            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.RemovePreviousPassword();
             ClientRegistrationPage.InputPassword("Testpassword1");
 
             actualMessage = ClientRegistrationPage.GetErrorMessage();
 
             Assert.IsTrue(actualMessage.Contains(expectedMessage));
 
-            ClientRegistrationPage.RemoveIncorrectPassword();
+            ClientRegistrationPage.RemovePreviousPassword();
             ClientRegistrationPage.InputPassword("Testpassword1?");
 
             bool elementNotPresent = ClientRegistrationPage.IsErrorMessagePresent();
