@@ -7,8 +7,6 @@ namespace FrameworkProject.Page
     {
         public static void Open()
         {
-            Common.ChangeWindowPosition();
-            Common.MaximizeWindow();
             Driver.OpenURL("https://www.topocentras.lt/kliento-registracija");
         }
 

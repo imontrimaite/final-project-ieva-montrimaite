@@ -12,17 +12,6 @@ namespace FrameworkProject
 {
     internal class Common
     {
-        internal static void ChangeWindowPosition()
-        {
-            Driver.GetDriver().Manage().Window.Position = new System.Drawing.Point(2000, 1);
-        }
-
-        internal static void MaximizeWindow()
-        {
-            Driver.GetDriver().Manage().Window.Maximize();
-        }
-
-
         private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));

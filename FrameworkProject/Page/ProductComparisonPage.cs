@@ -8,8 +8,6 @@ namespace FrameworkProject.Page
     {
         public static void Open()
         {
-            Common.ChangeWindowPosition();
-            Common.MaximizeWindow();
             Driver.OpenURL("https://www.topocentras.lt/mac/macbook-pro-m2.html");
             Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
