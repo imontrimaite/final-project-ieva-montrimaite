@@ -7,7 +7,7 @@ namespace FrameworkProject.Page
         {
             internal static string cookieConsent = "//*[@class='CookieConsent-actions-F41']";
         }
-        internal class SuccessfulRegistration
+        internal class ClientRegistration
         {
             internal static string inputEmail = "//*[@id='email']";
             internal static string inputPassword = "//*[@id='password']";

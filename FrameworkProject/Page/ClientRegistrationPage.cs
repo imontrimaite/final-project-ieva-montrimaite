@@ -12,38 +12,38 @@ namespace FrameworkProject.Page
 
         public static void InputEmail(string email)
         {
-            Common.SendKeys(Locators.SuccessfulRegistration.inputEmail, email);
+            Common.SendKeys(Locators.ClientRegistration.inputEmail, email);
         }
 
         public static void InputPassword(string password)
         {
-            Common.SendKeys(Locators.SuccessfulRegistration.inputPassword, password);
+            Common.SendKeys(Locators.ClientRegistration.inputPassword, password);
         }
 
         public static void ClickBothCheckboxes()
         {
-            Common.ClickElements(Locators.SuccessfulRegistration.checkboxes);
+            Common.ClickElements(Locators.ClientRegistration.checkboxes);
         }
 
         public static void ClickRegisterButton()
         {
-            Common.ClickElement(Locators.SuccessfulRegistration.buttonRegister);
+            Common.ClickElement(Locators.ClientRegistration.buttonRegister);
         }
 
         public static string GetRegistrationConfirmationMessage()
         {
-            Common.WaitForElementToBeVisible(Locators.SuccessfulRegistration.messageConfirmation);
-            return Common.GetElementText(Locators.SuccessfulRegistration.messageConfirmation);
+            Common.WaitForElementToBeVisible(Locators.ClientRegistration.messageConfirmation);
+            return Common.GetElementText(Locators.ClientRegistration.messageConfirmation);
         }
 
         public static string GetErrorMessage()
         {
-            return Common.GetElementText(Locators.SuccessfulRegistration.messagePwrdError);
+            return Common.GetElementText(Locators.ClientRegistration.messagePwrdError);
         }
 
         public static void RemovePreviousPassword()
         {
-            Common.RemoveText(Locators.SuccessfulRegistration.inputPassword);
+            Common.RemoveText(Locators.ClientRegistration.inputPassword);
         }
     }
 }
