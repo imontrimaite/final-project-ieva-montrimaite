@@ -12,9 +12,9 @@ namespace FrameworkProject.Page
             Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
 
-        public static void ClickAvailableInStoresCheckbox()
+        public static void ClickUpTo300eurCheckbox()
         {
-            Common.ClickElement(Locators.ProdcutFilter.checkboxInStores);
+            Common.ClickElement(Locators.ProdcutFilter.checkboxUpTo300eur);
         }
 
         public static void ClickPhilipsProducerCheckbox()
@@ -22,9 +22,9 @@ namespace FrameworkProject.Page
             Common.ClickElement(Locators.ProdcutFilter.checkboxPhilips);
         }
 
-        public static List<string> GetProductsAvailabilityText()
+        public static List<string> GetPriceText()
         {
-            return Common.GetElementsText(Locators.ProdcutFilter.outputProductAvailability);
+            return Common.GetElementsText(Locators.ProdcutFilter.outputPriceRange);
         }
 
         public static List<string> GetProducerText()

@@ -2,6 +2,7 @@
 using FrameworkProject.Page;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
@@ -17,14 +18,20 @@ namespace TestsProject.TopoCentras
         [Test]
         public void ProductFilter()
         {
-            string expectedAvailablity = "Į krepšelį";
-            string expectedProducer = "PHILIPS";
+            int expectedPriceRange = 300;
+            string expectedProducer = "PHILIPS";            
 
-            ProductFilterPage.ClickAvailableInStoresCheckbox();
+            ProductFilterPage.ClickUpTo300eurCheckbox();
             ProductFilterPage.ClickPhilipsProducerCheckbox();
 
-            List<string> actualAvailability = ProductFilterPage.GetProductsAvailabilityText();
-            Assert.IsTrue(actualAvailability.TrueForAll(x => x.Equals(expectedAvailablity)));
+            List<string> actualPrices = ProductFilterPage.GetPriceText();
+
+            foreach (string price in actualPrices)
+            {
+                string priceSplit = price.Split(' ').First().Split(',').First();
+                int priceAsInt = int.Parse(priceSplit);
+                Assert.LessOrEqual(priceAsInt, expectedPriceRange);
+            }
 
             List<string> actualProducer = ProductFilterPage.GetProducerText();
             Assert.IsTrue(actualProducer.TrueForAll(x => x.Contains(expectedProducer)));
