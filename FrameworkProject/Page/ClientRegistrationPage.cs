@@ -29,7 +29,7 @@ namespace FrameworkProject.Page
 
         public static void ClickRegisterButton()
         {
-            Common.ClickElement(Locators.ClientRegistration.buttonRegister);
+            Common.ScrollAndClickElement(Locators.ClientRegistration.buttonRegister);
         }
 
         public static string GetRegistrationConfirmationMessage()

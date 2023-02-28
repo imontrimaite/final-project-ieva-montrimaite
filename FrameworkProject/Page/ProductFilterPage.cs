@@ -13,7 +13,7 @@ namespace FrameworkProject.Page
 
         public static void ClickUpTo300eurCheckbox()
         {
-            Common.ClickElement(Locators.ProdcutFilter.checkboxUpTo300eur);
+            Common.ScrollAndClickElement(Locators.ProdcutFilter.checkboxUpTo300eur);
         }
 
         public static void ClickPhilipsManufacturerCheckbox()

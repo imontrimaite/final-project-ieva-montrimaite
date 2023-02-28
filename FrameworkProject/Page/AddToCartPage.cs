@@ -12,8 +12,9 @@ namespace FrameworkProject.Page
 
         public static void ClickAddToCartButton()
         {
-            Common.ClickElement(Locators.AddToCart.buttonAddToCart);
+            Common.ScrollAndClickElement(Locators.AddToCart.buttonAddToCart);
         }
+
         public static void ClickContinueShoppingButton()
         {
             Common.WaitForElementToBeVisible(Locators.AddToCart.buttonContinueShopping);
@@ -35,6 +36,7 @@ namespace FrameworkProject.Page
         {
             Common.MoveMouseToElement(Locators.AddToCart.hoverAddToCart);
         }
+
         public static void ClickBuyButton()
         {
             Common.ClickElement(Locators.AddToCart.buttonBuy);

@@ -1,10 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace FrameworkProject
 {
@@ -33,6 +35,47 @@ namespace FrameworkProject
         internal static void ClickElement(string locator)
         {
             GetElement(locator).Click();
+        }
+
+        /// <summary>
+        /// Kažkodėl esant mažesniam ekranui, ne visi svetainės elementai egzistuojam html dom'e
+        /// Tam, kad jie atsirastų dom'e, užtenka šiek tiek pascrollinti
+        /// Tačiau netinkamo xpath atveju mes scrollintume amžinai
+        /// Dėl to papildomai įvestas kiekis kartų kiek maksimaliai galima bandyti scrollinti
+        /// </summary>
+        internal static void ScrollAndClickElement(string locator)
+        {
+            bool elementIsClickable = false;
+            int maxTries = 5;
+            int attempt = 0;
+            // Kartojame tol, kol elementą galėsime sėkmingai paspausti be exception
+            // Arba maksimaliai 5 kartus
+            while (!elementIsClickable)
+            {
+                try
+                {
+                    // Bandome spausti elementą
+                    GetElement(locator).Click();
+                    // Jei pavyko paspausti, toliau nebandysime
+                    elementIsClickable = true;
+                }
+                // Jei nepavyko paspausti
+                catch (Exception ex)
+                {
+                    attempt++;
+                    // Tikriname tik tuos exceptionus kurie mums aktualūs
+                    // Jei yra kažkuris iš jų IR dar neviršijome leistinų bandymų skaičiaus
+                    if ((ex is ElementClickInterceptedException || ex is NoSuchElementException) && attempt <= maxTries)
+                    {
+                        // Tuomet scrolliname šiek tiek žemyn
+                        Driver.GetDriver().ExecuteJavaScript("window.scrollBy(0,50)");
+                    }
+                    else
+                    {
+                        throw ex;
+                    }
+                }
+            }
         }
 
         internal static void SendKeys(string locator, string textValue)
