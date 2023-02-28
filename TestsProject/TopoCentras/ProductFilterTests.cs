@@ -1,7 +1,6 @@
 ﻿using FrameworkProject.Page;
 using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
 using TestsProject.BaseTests;
 
 namespace TestsProject.TopoCentras
@@ -23,17 +22,15 @@ namespace TestsProject.TopoCentras
             ProductFilterPage.ClickUpTo300eurCheckbox();
             ProductFilterPage.ClickPhilipsManufacturerCheckbox();
 
-            List<string> actualPrices = ProductFilterPage.GetPriceText();
+            List<int> actualPrices = ProductFilterPage.GetProductPrices();
 
-            foreach (string price in actualPrices)
+            foreach (int price in actualPrices)
             {
-                string priceTextSplit = price.Split(' ').First().Split(',').First();
-                int priceAsInt = int.Parse(priceTextSplit);
-                Assert.LessOrEqual(priceAsInt, expectedPriceRange);
+                Assert.LessOrEqual(price, expectedPriceRange);
             }
 
-            List<string> actualManufacturer = ProductFilterPage.GetManufacturerName();
-            Assert.IsTrue(actualManufacturer.TrueForAll(x => x.Contains(expectedManufacturer)));
+            List<string> actualManufacturers = ProductFilterPage.GetManufacturerName();
+            Assert.IsTrue(ProductFilterPage.ProductsHaveExpectedManufacturerName(actualManufacturers, expectedManufacturer));
         }
     }
 }
