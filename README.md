@@ -56,4 +56,4 @@ Site link: https://www.topocentras.lt/
     <p> 1. Select price up to 300 eur within the price range filter </p>
     <p> 2. Select PHILIPS within the manufacturer filter </p>
     <p> 3. Check if all filtered products cost less than 300 eur </p>
-    <p> 4. Check if all selected products are PHILIPS TV </p>
+    <p> 4. Check if all filtered products are PHILIPS TV </p>
