@@ -18,7 +18,7 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Nurodytu el.paštu išsiuntėmė laišką registracijos patvirtinimui.";
 
-            ClientRegistrationPage.InputEmail("valid@email.com");
+            ClientRegistrationPage.InputRandomValidEmail();
             ClientRegistrationPage.InputPassword("Test12?Pwrd!");
             ClientRegistrationPage.ClickBothCheckboxes();
             ClientRegistrationPage.ClickRegisterButton();
@@ -33,7 +33,7 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Slaptažodį turi sudaryti";
 
-            ClientRegistrationPage.InputEmail("testemail2@email.com");
+            ClientRegistrationPage.InputRandomValidEmail();
 
             List<string> passwords = new List<string>() {"Test", "testpassword?1", "Testpassword?", "Testpassword1", "TESTPWRD?1"};
 

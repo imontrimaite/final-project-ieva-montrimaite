@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FrameworkProject.Page
 {
@@ -9,8 +10,9 @@ namespace FrameworkProject.Page
             Driver.OpenURL("https://www.topocentras.lt/kliento-registracija");
         }
 
-        public static void InputEmail(string email)
+        public static void InputRandomValidEmail()
         {
+            string email = $"email{Guid.NewGuid().ToString()}@email.com";
             Common.SendKeys(Locators.ClientRegistration.inputEmail, email);
         }
 
