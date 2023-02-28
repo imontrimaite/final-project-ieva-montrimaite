@@ -56,5 +56,10 @@ namespace FrameworkProject.Page
             Common.WaitForElementAttributeToChangeValue(Locators.AddToCart.productQuantity, "value", "2");
             return Common.GetAttributeValue(Locators.AddToCart.productQuantity, "value");
         }
+
+        public static bool ProductNamesContainPhrase(List<string> productNames, string expectedPhrase)
+        {
+            return productNames.TrueForAll(x => x.Contains(expectedPhrase));
+        }
     }
 }
