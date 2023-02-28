@@ -22,7 +22,7 @@ namespace TestsProject.TopoCentras
             string expectedManufacturer = "PHILIPS";            
 
             ProductFilterPage.ClickUpTo300eurCheckbox();
-            ProductFilterPage.ClickPhilipsProducerCheckbox();
+            ProductFilterPage.ClickPhilipsManufacturerCheckbox();
 
             List<string> actualPrices = ProductFilterPage.GetPriceText();
 
