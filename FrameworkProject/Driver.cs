@@ -8,11 +8,12 @@ namespace FrameworkProject
     public class Driver
     {
         private static IWebDriver driver;
+
         public static void SetupDriver()
         {
             driver = new ChromeDriver();
-            Driver.GetDriver().Manage().Window.Position = new System.Drawing.Point(2000, 1);
-            Driver.GetDriver().Manage().Window.Maximize();
+            driver.Manage().Window.Position = new System.Drawing.Point(2000, 1);
+            driver.Manage().Window.Maximize();
         }
         public static IWebDriver GetDriver()
         {
