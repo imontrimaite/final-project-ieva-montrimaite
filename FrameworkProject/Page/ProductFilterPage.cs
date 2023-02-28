@@ -27,9 +27,9 @@ namespace FrameworkProject.Page
             return Common.GetElementsText(Locators.ProdcutFilter.outputPriceRange);
         }
 
-        public static List<string> GetProducerText()
+        public static List<string> GetManufacturerName()
         {
-            return Common.GetElementsText(Locators.ProdcutFilter.outputProducer);
+            return Common.GetElementsText(Locators.ProdcutFilter.outputManufacturer);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace FrameworkProject.Page
         {
             internal static string checkboxUpTo300eur = "//*[text()='Iki 300 €']";
             internal static string checkboxPhilips = "//*[text()='PHILIPS']";
-            internal static string outputProducer = "//*[@class='ProductGridItem-productName-3ZD']";
+            internal static string outputManufacturer = "//*[@class='ProductGridItem-productName-3ZD']";
             internal static string outputPriceRange = "//*[@class='ProductGridItem-productPrice-1eJ']";
         }
     }

@@ -19,7 +19,7 @@ namespace TestsProject.TopoCentras
         public void ProductFilter()
         {
             int expectedPriceRange = 300;
-            string expectedProducer = "PHILIPS";            
+            string expectedManufacturer = "PHILIPS";            
 
             ProductFilterPage.ClickUpTo300eurCheckbox();
             ProductFilterPage.ClickPhilipsProducerCheckbox();
@@ -28,13 +28,13 @@ namespace TestsProject.TopoCentras
 
             foreach (string price in actualPrices)
             {
-                string priceSplit = price.Split(' ').First().Split(',').First();
-                int priceAsInt = int.Parse(priceSplit);
+                string priceTextSplit = price.Split(' ').First().Split(',').First();
+                int priceAsInt = int.Parse(priceTextSplit);
                 Assert.LessOrEqual(priceAsInt, expectedPriceRange);
             }
 
-            List<string> actualProducer = ProductFilterPage.GetProducerText();
-            Assert.IsTrue(actualProducer.TrueForAll(x => x.Contains(expectedProducer)));
+            List<string> actualManufacturer = ProductFilterPage.GetManufacturerName();
+            Assert.IsTrue(actualManufacturer.TrueForAll(x => x.Contains(expectedManufacturer)));
         }
     }
 }
