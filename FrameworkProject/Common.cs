@@ -47,7 +47,7 @@ namespace FrameworkProject
             return GetElement(locator).Text;
         }
 
-        internal static void RemoveText(string locator)
+        internal static void ClearText(string locator)
         {
             IWebElement toClear = Driver.GetDriver().FindElement(By.XPath(locator));
             toClear.SendKeys(Keys.Control + "a");

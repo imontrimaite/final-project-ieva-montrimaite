@@ -41,9 +41,9 @@ namespace FrameworkProject.Page
             return Common.GetElementText(Locators.ClientRegistration.messagePwrdError);
         }
 
-        public static void RemovePreviousPassword()
+        public static void ClearPasswordField()
         {
-            Common.RemoveText(Locators.ClientRegistration.inputPassword);
+            Common.ClearText(Locators.ClientRegistration.inputPassword);
         }
     }
 }

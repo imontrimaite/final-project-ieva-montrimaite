@@ -41,8 +41,7 @@ namespace TestsProject.TopoCentras
 
             foreach (string password in passwords)
             {
-                ClientRegistrationPage.InputPassword(password);
-                ClientRegistrationPage.RemovePreviousPassword();
+                ClientRegistrationPage.ClearPasswordField();
                 ClientRegistrationPage.InputPassword(password);
                 ClientRegistrationPage.ClickRegisterButton();
 
