@@ -41,13 +41,14 @@ namespace TestsProject.TopoCentras
 
             foreach (string password in passwords)
             {
-                ClientRegistrationPage.ClearPasswordField();
                 ClientRegistrationPage.InputPassword(password);
                 ClientRegistrationPage.ClickRegisterButton();
 
                 string actualMessage = ClientRegistrationPage.GetErrorMessage();
 
                 Assert.IsTrue(actualMessage.Contains(expectedMessage));
+
+                ClientRegistrationPage.ClearPasswordField();
             }
         }
     }
