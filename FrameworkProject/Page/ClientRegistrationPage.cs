@@ -8,6 +8,7 @@ namespace FrameworkProject.Page
         public static void Open()
         {
             Driver.OpenURL("https://www.topocentras.lt/kliento-registracija");
+            Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
 
         public static void InputRandomValidEmail()
