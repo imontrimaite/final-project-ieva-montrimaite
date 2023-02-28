@@ -37,17 +37,9 @@ namespace TestsProject.TopoCentras
 
             List<string> passwords = new List<string>() {"Test", "testpassword?1", "Testpassword?", "Testpassword1", "TESTPWRD?1"};
 
-            foreach (string password in passwords)
-            {
-                ClientRegistrationPage.InputPassword(password);
-                ClientRegistrationPage.ClickRegisterButton();
-
-                string actualMessage = ClientRegistrationPage.GetErrorMessage();
-
-                Assert.IsTrue(actualMessage.Contains(expectedMessage));
-
-                ClientRegistrationPage.ClearPasswordField();
-            }
+            // Vienas iš būdų kaip "paslėpti" visą foreach į POM vidų
+            // Bet šiaip šiuo konkrečiu atveju pats foreach nėra labai sudėtingas, taigi nebūtų didelė problema jį palikti čia
+            Assert.IsTrue(ClientRegistrationPage.PasswordsAreInvalid(passwords, expectedMessage));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FrameworkProject.Page
+﻿using System.Collections.Generic;
+
+namespace FrameworkProject.Page
 {
     public class ClientRegistrationPage
     {
@@ -41,6 +43,26 @@
         public static void ClearPasswordField()
         {
             Common.ClearText(Locators.ClientRegistration.inputPassword);
+        }
+
+        public static bool PasswordsAreInvalid(List<string> passwords, string expectedMessage)
+        {
+            foreach (string password in passwords)
+            {
+                InputPassword(password);
+                ClickRegisterButton();
+
+                // Jeigu nuskaitome error žinutę ir joje nėra ko tikimės, iškart grąžiname false
+                if (!GetErrorMessage().Contains(expectedMessage))
+                {
+                    return false;
+                }
+
+                ClearPasswordField();
+            }
+
+            // Jei patikrinus visus slaptažodžius atsidūrėme čia, vadinasi visi jie yra nevalidūs ir grąžiname true
+            return true;
         }
     }
 }
