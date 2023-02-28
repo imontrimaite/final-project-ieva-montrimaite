@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace FrameworkProject.Page
+﻿namespace FrameworkProject.Page
 {
     public class ClientRegistrationPage
     {

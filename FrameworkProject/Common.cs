@@ -6,8 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
-
 namespace FrameworkProject
 {
     internal class Common

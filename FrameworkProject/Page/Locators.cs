@@ -1,5 +1,4 @@
-﻿
-namespace FrameworkProject.Page
+﻿namespace FrameworkProject.Page
 {
     internal class Locators
     {
