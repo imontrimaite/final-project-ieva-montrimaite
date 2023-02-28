@@ -20,6 +20,7 @@
 
         public static void ClickCompareButton()
         {
+            Common.WaitForElementToBeClickable(Locators.ProductComparison.buttonCompare);
             Common.ClickElement(Locators.ProductComparison.buttonCompare);            
         }
 

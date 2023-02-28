@@ -89,5 +89,11 @@ namespace FrameworkProject
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(attributeNewValue));
         }
+
+        internal static void WaitForElementToBeClickable(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+        }
     }
 }
