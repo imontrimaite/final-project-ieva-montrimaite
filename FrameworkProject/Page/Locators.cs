@@ -6,6 +6,7 @@
         {
             internal static string cookieConsent = "//*[@class='CookieConsent-actions-F41']";
         }
+
         internal class ClientRegistration
         {
             internal static string inputEmail = "//*[@id='email']";
