@@ -1,6 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace FrameworkProject.Page
 {
@@ -14,8 +12,9 @@ namespace FrameworkProject.Page
 
         public static void ClickAddToCartButton()
         {
-            Common.ClickElement(Locators.AddToCart.buttonAddToCart);
+            Common.ScrollAndClickElement(Locators.AddToCart.buttonAddToCart);
         }
+
         public static void ClickContinueShoppingButton()
         {
             Common.WaitForElementToBeVisible(Locators.AddToCart.buttonContinueShopping);
@@ -37,6 +36,7 @@ namespace FrameworkProject.Page
         {
             Common.MoveMouseToElement(Locators.AddToCart.hoverAddToCart);
         }
+
         public static void ClickBuyButton()
         {
             Common.ClickElement(Locators.AddToCart.buttonBuy);
@@ -57,6 +57,11 @@ namespace FrameworkProject.Page
         {
             Common.WaitForElementAttributeToChangeValue(Locators.AddToCart.productQuantity, "value", "2");
             return Common.GetAttributeValue(Locators.AddToCart.productQuantity, "value");
+        }
+
+        public static bool ProductNamesContainPhrase(List<string> productNames, string expectedPhrase)
+        {
+            return productNames.TrueForAll(x => x.Contains(expectedPhrase));
         }
     }
 }

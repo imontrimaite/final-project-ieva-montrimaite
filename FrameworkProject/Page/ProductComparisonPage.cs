@@ -1,8 +1,4 @@
-﻿
-
-using System;
-
-namespace FrameworkProject.Page
+﻿namespace FrameworkProject.Page
 {
     public class ProductComparisonPage
     {
@@ -14,16 +10,17 @@ namespace FrameworkProject.Page
 
         public static void SelectFirstComaprisonCheckbox()
         {
-            Common.ClickElement(Locators.ProductComparison.firstCheckbox);
+            Common.ScrollAndClickElement(Locators.ProductComparison.firstCheckbox);
         }
 
         public static void SelectSecondComaprisonCheckbox()
         {
-            Common.ClickElement(Locators.ProductComparison.secondCheckbox);
+            Common.ScrollAndClickElement(Locators.ProductComparison.secondCheckbox);
         }
 
         public static void ClickCompareButton()
         {
+            Common.WaitForElementToBeClickable(Locators.ProductComparison.buttonCompare);
             Common.ClickElement(Locators.ProductComparison.buttonCompare);            
         }
 

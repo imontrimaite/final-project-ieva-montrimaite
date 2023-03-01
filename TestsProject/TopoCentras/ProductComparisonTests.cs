@@ -1,7 +1,4 @@
-﻿
-
-using FrameworkProject;
-using FrameworkProject.Page;
+﻿using FrameworkProject.Page;
 using NUnit.Framework;
 using TestsProject.BaseTests;
 

@@ -1,6 +1,4 @@
-﻿
-using FrameworkProject;
-using FrameworkProject.Page;
+﻿using FrameworkProject.Page;
 using NUnit.Framework;
 using System.Collections.Generic;
 using TestsProject.BaseTests;
@@ -20,7 +18,7 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Nurodytu el.paštu išsiuntėmė laišką registracijos patvirtinimui.";
 
-            ClientRegistrationPage.InputEmail("valid@email.com");
+            ClientRegistrationPage.InputRandomValidEmail();
             ClientRegistrationPage.InputPassword("Test12?Pwrd!");
             ClientRegistrationPage.ClickBothCheckboxes();
             ClientRegistrationPage.ClickRegisterButton();
@@ -35,21 +33,13 @@ namespace TestsProject.TopoCentras
         {
             string expectedMessage = "Slaptažodį turi sudaryti";
 
-            ClientRegistrationPage.InputEmail("testemail2@email.com");
+            ClientRegistrationPage.InputRandomValidEmail();
 
             List<string> passwords = new List<string>() {"Test", "testpassword?1", "Testpassword?", "Testpassword1", "TESTPWRD?1"};
 
-            foreach (string password in passwords)
-            {
-                ClientRegistrationPage.InputPassword(password);
-                ClientRegistrationPage.ClickRegisterButton();
-
-                string actualMessage = ClientRegistrationPage.GetErrorMessage();
-
-                Assert.IsTrue(actualMessage.Contains(expectedMessage));
-
-                ClientRegistrationPage.ClearPasswordField();
-            }
+            // Vienas iš būdų kaip "paslėpti" visą foreach į POM vidų
+            // Bet šiaip šiuo konkrečiu atveju pats foreach nėra labai sudėtingas, taigi nebūtų didelė problema jį palikti čia
+            Assert.IsTrue(ClientRegistrationPage.PasswordsAreInvalid(passwords, expectedMessage));
         }
     }
 }

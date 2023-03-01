@@ -1,5 +1,4 @@
-﻿
-using FrameworkProject;
+﻿using FrameworkProject;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 

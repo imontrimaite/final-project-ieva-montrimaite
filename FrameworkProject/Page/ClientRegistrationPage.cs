@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FrameworkProject.Page
 {
@@ -8,10 +8,12 @@ namespace FrameworkProject.Page
         public static void Open()
         {
             Driver.OpenURL("https://www.topocentras.lt/kliento-registracija");
+            Common.ClickElement(Locators.CookieConsent.cookieConsent);
         }
 
-        public static void InputEmail(string email)
+        public static void InputRandomValidEmail()
         {
+            string email = $"email{Guid.NewGuid().ToString()}@email.com";
             Common.SendKeys(Locators.ClientRegistration.inputEmail, email);
         }
 
@@ -27,7 +29,7 @@ namespace FrameworkProject.Page
 
         public static void ClickRegisterButton()
         {
-            Common.ClickElement(Locators.ClientRegistration.buttonRegister);
+            Common.ScrollAndClickElement(Locators.ClientRegistration.buttonRegister);
         }
 
         public static string GetRegistrationConfirmationMessage()
@@ -44,6 +46,26 @@ namespace FrameworkProject.Page
         public static void ClearPasswordField()
         {
             Common.ClearText(Locators.ClientRegistration.inputPassword);
+        }
+
+        public static bool PasswordsAreInvalid(List<string> passwords, string expectedMessage)
+        {
+            foreach (string password in passwords)
+            {
+                InputPassword(password);
+                ClickRegisterButton();
+
+                // Jeigu nuskaitome error žinutę ir joje nėra ko tikimės, iškart grąžiname false
+                if (!GetErrorMessage().Contains(expectedMessage))
+                {
+                    return false;
+                }
+
+                ClearPasswordField();
+            }
+
+            // Jei patikrinus visus slaptažodžius atsidūrėme čia, vadinasi visi jie yra nevalidūs ir grąžiname true
+            return true;
         }
     }
 }

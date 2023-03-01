@@ -1,7 +1,5 @@
-﻿
-using FrameworkProject.Page;
+﻿using FrameworkProject.Page;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using TestsProject.BaseTests;
 
@@ -31,7 +29,7 @@ namespace TestsProject.TopoCentras
             AddToCartPage.ClickQuantityButton();
 
             List<string> actualFullProductNames = AddToCartPage.GetFullProductNames();
-            Assert.IsTrue(actualFullProductNames.TrueForAll(x => x.Contains(expectedProductName)));
+            Assert.IsTrue(AddToCartPage.ProductNamesContainPhrase(actualFullProductNames, expectedProductName));
 
             string actualQuantity = AddToCartPage.GetProductQuantity();
             Assert.AreEqual(expectedQuantity, actualQuantity);
